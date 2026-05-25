@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
   "version": "1.0",
-  "name": "Elegant Black Theme",
-  "description": "Tasteful OLED black theme for Firefox",
+  "name": "Minima Black Theme",
+  "description": "Tasteful black theme for Firefox",
   "author": "nikkehtine",
-  "homepage_url": "https://github.com/nikkehtine/firefox-elegant-black-theme",
+  "homepage_url": "https://github.com/nikkehtine/firefox-minima-black-theme",
   "theme": {
     "colors": {
       "frame": "#060606",

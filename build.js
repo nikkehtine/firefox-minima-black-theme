@@ -6,7 +6,7 @@ import path from "path";
 import { execSync } from "child_process";
 
 const OUT_DIR = "dist";
-const FILENAME = "elegant-black-theme";
+const FILENAME = "minima-dark-theme";
 const MANIFEST = "manifest.json";
 
 const command = process.argv[2];
@@ -38,17 +38,20 @@ const run = (cmd) => {
 
 try {
   switch (os.platform()) {
-    case "win32":
+    case "win32": {
+      const tempZip = outputFilePath.replace(/\.xpi$/, ".zip");
       run(
         `powershell -NoProfile -ExecutionPolicy Bypass ` +
           `-Command "Import-Module Microsoft.PowerShell.Archive; ` +
-          `Compress-Archive -Path '${MANIFEST}' -DestinationPath '${outputFilePath}'; ` +
+          `Compress-Archive -Path '${MANIFEST}' -DestinationPath '${tempZip}'; ` +
+          `Rename-Item -Path '${tempZip}' -NewName '${path.basename(outputFilePath)}'; ` +
           `exit"`,
       );
       break;
+    }
     case "darwin":
     case "linux":
-      run(`zip -r ${outputFilePath} .`);
+      run(`zip -r ${outputFilePath} manifest.json`);
       break;
   }
 } catch (error) {
