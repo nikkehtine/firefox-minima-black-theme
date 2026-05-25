@@ -1,6 +1,6 @@
-# Firefox Elegant Black Theme
+# Firefox Minima Black Theme
 
-Tasteful OLED black theme for Firefox
+Tasteful black theme for Firefox
 
 ![Screenshot](screenshot.png)
 
